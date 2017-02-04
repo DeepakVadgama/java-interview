@@ -1,3 +1,7 @@
+## Introduction
+
+- Its meant to be last-week-revision-notes. Resource links are added for in-depth studies. 
+- Companies/Panels/Interviewees have their favorite topics. Some focus on core JVM internals, others focus on high level design. Questions also vary based on your experience and role you are applying for. Google for interview experiences, or better yet, just ask the recruiter.
 
 ## Core 
 
@@ -9,6 +13,7 @@
 ## Clean Code
 
 - Solid Principles
+- Clean Code
 - Effective Java
 - Design Patterns
 - Scalability
