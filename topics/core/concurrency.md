@@ -3,8 +3,7 @@
 
 ### Resources
 
-- [Concurrency in Practice by Brian Goetz](http://jcip.net) - Highly Recommended 
-- 
+- [Concurrency in Practice by Brian Goetz](http://jcip.net) - Highly Recommended
  
 ### Chapter 1: Basics
 

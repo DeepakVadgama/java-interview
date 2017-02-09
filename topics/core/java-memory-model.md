@@ -3,7 +3,6 @@
 ### Resources
 
 - [The Java memory model made easy by Rafael Winterhalter](https://vimeo.com/181788144) - Highly Recommended
-- 
 
 ### What is it?
 
