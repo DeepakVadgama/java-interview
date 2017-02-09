@@ -1,3 +1,5 @@
+## Garbage Collection
+
 ### Resources
 
 - [GC Overview by Martin Thompson](http://mechanical-sympathy.blogspot.in/2013/07/java-garbage-collection-distilled.html) - Highly recommended
