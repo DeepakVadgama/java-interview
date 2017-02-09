@@ -1,23 +1,31 @@
 ### Resources
 
-- [https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html)
-- [https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/parallel.html#parallel\_collector\_ergonomics](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/parallel.html#parallel_collector_ergonomics)
-- [http://onemogin.com/java/gc/java-gc-tuning-generational.html](http://onemogin.com/java/gc/java-gc-tuning-generational.html)
-- [http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html](http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html)
-- [http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)
-- [excellent article](http://mechanical-sympathy.blogspot.in/2013/07/java-garbage-collection-distilled.html)
-- [https://plumbr.eu/handbook/garbage-collection-algorithms-implementations](https://plumbr.eu/handbook/garbage-collection-algorithms-implementations)
-- [http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html](http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html)
+- [GC Overview by Martin Thompson](http://mechanical-sympathy.blogspot.in/2013/07/java-garbage-collection-distilled.html) - Highly recommended
+- [Detailed overview of all GC collectors](https://plumbr.eu/handbook/garbage-collection-algorithms-implementations)
+- [Modern Garbage Collection (GC Trade-offs)](https://blog.plan99.net/modern-garbage-collection-911ef4f8bd8e#.qcnv033nr)
+- [Internals of G1 collector](https://www.youtube.com/watch?v=Gee7QfoY8ys)
+- [Overview of Shenondoah collector](https://www.youtube.com/watch?v=N0JTvyCxiv8)
 
-### Pauses more than GC
+### Quick Glance
 
-- Networking, Disk read/writes, Waiting for DBs
-- OS interrupts (~5ms), this doesn't show up in logs
-- Lock contention
+
+| Collector | Pros | Cons | Use-Case |
+| --- | --- | --- | --- |
+| Serial | Fast promotion and minor GC (Bump the pointer)<br/>Smallest footprint | Single Thread | Limited memory (embedded).<br/> CPU running lot of JVMs (helps limit GC impact other JVMs) |
+| Parallel | Fast promotion and minor GC (Bump the pointer)<br/>Higher Throughput (doesn&#39;t run with application) | High worst-case latency (due to compaction) | Batch applications |
+| CMS | Low STW pauses (Concurrent mark).<br/>Low worst case latency. | Slow promotion &amp; Minor GC (free lists)<br/>Reduced throughput<br/>Higher footprint. | General applications |
+| G1 | Incremental collection<br/>Lower worst case latency<br/>Relatively faster promotion (no free lists) <br/>More throughput (no compaction) | Higher footprint  | Predictable/Target latency applications.<br/>Large heaps |
+| Shenondoah |  Lower latency  | Higher footprint | Even lower latency<br> Much Larger heaps  |
+
+
+### Concepts
+
+- Throughput - Percentage of time application runs vs GC 
+- Latency - Amount of pause time for application waiting for GC to complete
+- Memory - Amount of memory used to store the objects aka heap (along with GC related data structures)
 
 ### Trade offs
 
-- Between throughput, latency and memory.
 - If memory is less, throughput is less, because JVM has to constantly do GC
 - If memory is more, latency is high, because JVM has to sweep huge space to do GC
 
@@ -158,10 +166,9 @@
 - Trick is to create indirection pointer to objects, and after copying live objects, atomically update the indirection pointer to copied version of the objects.
 - Not Generational. Claim is, Weak Generational Hypothesis is no longer applicable.
 
-| Collector | Pros | Cons | Use-Case |
-| --- | --- | --- | --- |
-| Serial | Fast promotion and minor GC (Bump the pointer)<br/>Smallest footprint | Single Thread | Limited memory (embedded).<br/> CPU running lot of JVMs (helps limit GC impact other JVMs) |
-| Parallel | Fast promotion and minor GC (Bump the pointer)<br/>Higher Throughput (doesn&#39;t run with application) | High worst-case latency (due to compaction) | Batch applications |
-| CMS | Low STW pauses (Concurrent mark).<br/>Low worst case latency. | Slow promotion &amp; Minor GC (free lists)<br/>Reduced throughput<br/>Higher footprint. | General applications |
-| G1 | Incremental collectionLower worst case latency<br/>Relatively faster promotion (no free lists) <br/>More throughput (no compaction) | Higher footprint.  | Predictable/Target latency applications.<br/>Large heaps. |
-| Shenondoah |   |   |   |
+### Other pauses not related to GC
+
+- Networking, Disk read/writes, Waiting for DBs
+- OS interrupts (~5ms), this doesn't show up in logs
+- Lock contention
+
