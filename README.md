@@ -20,7 +20,7 @@ Google for interview experiences at the company, or better yet, just ask the rec
 - Java 8
 - Java Memory Model
 - Concurrency
-- [Garbage Collection](/topics/core/garbage-collection)
+- [Garbage Collection](topics/core/garbage-collection.md)
 - JVM Internals
 
 ### Design / Clean Code
