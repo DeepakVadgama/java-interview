@@ -160,8 +160,8 @@
 
 | Collector | Pros | Cons | Use-Case |
 | --- | --- | --- | --- |
-| Serial | Fast promotion and minor GC (Bump the pointer)Smallest footprint | Single Thread | Limited memory (embedded). CPU running lot of JVMs (helps limit GC impact other JVMs) |
-| Parallel | Fast promotion and minor GC (Bump the pointer)Higher Throughput (doesn&#39;t run with application) | High worst-case latency (due to compaction) | Batch applications |
-| CMS | Low STW pauses (Concurrent mark).Low worst case latency. | Slow promotion &amp; Minor GC (free lists)Reduced throughputHigher footprint. | General applications |
-| G1 | Incremental collectionLower worst case latencyRelatively faster promotion (no free lists)More throughput (no compaction) | Higher footprint.  | Predictable/Target latency applications.  Large heaps. |
+| Serial | Fast promotion and minor GC (Bump the pointer)<br/>Smallest footprint | Single Thread | Limited memory (embedded).<br/> CPU running lot of JVMs (helps limit GC impact other JVMs) |
+| Parallel | Fast promotion and minor GC (Bump the pointer)<br/>Higher Throughput (doesn&#39;t run with application) | High worst-case latency (due to compaction) | Batch applications |
+| CMS | Low STW pauses (Concurrent mark).<br/>Low worst case latency. | Slow promotion &amp; Minor GC (free lists)<br/>Reduced throughput<br/>Higher footprint. | General applications |
+| G1 | Incremental collectionLower worst case latency<br/>Relatively faster promotion (no free lists) <br/>More throughput (no compaction) | Higher footprint.  | Predictable/Target latency applications.<br/>Large heaps. |
 | Shenondoah |   |   |   |
