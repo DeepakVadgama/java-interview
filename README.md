@@ -6,18 +6,17 @@ The notes are specifically for non-coding Java interviews, typically done in ser
 
 ### How to use it?
 
-Pick and choose the topics to study based on the company you are interviewing. 
-Companies/Panels/Interviewees all have their favorite topics. 
-Topics can vary from JVM internals to high level system design. 
-Topics also vary based on your experience and role you are applying for. 
-Google for interview experiences at the company, or better yet, just ask the recruiter.
+Pick and choose the topics based on the company you are interviewing. 
+Each Company/Panel/Interviewee has their favorite topics, which can vary from JVM internals to high level system design. 
+Topics can also vary based on your experience and role you are applying for. 
+Research for other candidates' interview experience at the company, or better yet, just ask the recruiter.
 
-### Table Of Contents 
+## Table Of Contents 
 
 ### Core Java
 
 - Collections
-- Java 8
+- [Java 8](topics/core/java-8.md)
 - [Java Memory Model](topics/core/java-memory-model.md)
 - [Concurrency](topics/core/concurrency.md)
 - [Garbage Collection](topics/core/garbage-collection.md)
@@ -31,7 +30,7 @@ Google for interview experiences at the company, or better yet, just ask the rec
 - Design Patterns
 - Scalability
 
-### Related technologies
+### Related topics
 
 - SQL 
 - UNIX 
@@ -41,6 +40,7 @@ Google for interview experiences at the company, or better yet, just ask the rec
 ### Advanced / Frameworks / Libraries
 
 - [Spring Boot overview (DI, Security, JPA, Testing)](http://http://deepakvadgama.com/blog/spring-boot-wonders/)
+- [JavaScript basics]()
 
 ### Probable Questions
 
