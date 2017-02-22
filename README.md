@@ -43,7 +43,7 @@ Research other candidates' interview experiences at the company, or better yet, 
 - [Spring Boot overview (DI, Security, JPA, Testing)](http://http://deepakvadgama.com/blog/spring-boot-wonders/)
 - [JavaScript basics]()
 
-### [Opinion based questions](topics/opinion/questions.md)
+### Opinion based questions
 
 Answers to such questions vary based on multiple factors (interviewer and interviewee's experience with Java, exposure to other languages, personal taste, etc). Thus, take the answers with pinch of salt, and make them your own before using them.
 
