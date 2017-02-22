@@ -9,7 +9,7 @@ The notes are specifically for theory based Java interviews, typically done in s
 Pick and choose the topics based on the company you are interviewing. 
 Each Company/Panel/Interviewee has their favorite topics, which can vary from JVM internals to high level system design. 
 Topics also vary based on your experience and role you are applying for. 
-Research for other candidates' interview experiences at the company, or better yet, just ask the recruiter.
+Research other candidates' interview experiences at the company, or better yet, just ask the recruiter.
 
 ## Table Of Contents 
 
@@ -47,6 +47,6 @@ Research for other candidates' interview experiences at the company, or better y
 
 Answers to such questions vary based on multiple factors (interviewer and interviewee's experience with Java, exposure to other languages, personal taste, etc). Thus, take the answers with pinch of salt, and make them your own before using them.
 
-- What do you like about Java? [Answer]()
-- What do you not like about Java? [Answer]()
-- Which is better - compilation, interpretation or JIT? Why? [Answer](topics/opinion/myanswers.md#)
+- What do you like about Java? [Answer](topics/opinion/myanswers.md#what-do-you-like-about-java)
+- What do you not like about Java? [Answer](topics/opinion/myanswers.md#what-do-you-not-like-about-java)
+- Which is better - compilation, interpretation or JIT? Why? [My Answer](topics/opinion/myanswers.md#importance-of-compile-time-vs-jit)
