@@ -18,7 +18,8 @@ for in-depth preparation.
 
 ### Core Java
 
-- Collections
+- [Core Java](topics/core/core-java.md)
+- [Collections](topics/core/collections.md)
 - [Java 8](topics/core/java-8.md)
 - [Java Memory Model](topics/core/java-memory-model.md)
 - [Concurrency](topics/core/concurrency.md)
@@ -36,10 +37,10 @@ for in-depth preparation.
 
 ### Related topics
 
-- SQL 
+- [SQL](topics/related/sql.md) 
 - UNIX 
 - Web
-- Computer Science
+- Computer Science Basics
 
 ### Other topics 
 
