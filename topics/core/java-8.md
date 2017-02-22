@@ -50,36 +50,36 @@
 
 **FlatMap**
 
-{% highlight java %}
+```
  Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8);
  Stream<String> words = lines.flatMap(line -> Stream.of(line.split(" +")));
-{% endhighlight %}
+```
 
 **Typical**
 
-{% highlight java %}
+```
 books.stream()
        .filter(book -> book.year > 2005)  // filter out books published in or before 2005
        .map(Book::getAuthor)              // get the list of authors for the remaining books
        .filter(Objects::nonNull)          // remove null authors from the list
        .map(Author::getName)              // get the list of names for the remaining authors
        .forEach(System.out::println);     // print the value of each remaining element
-{% endhighlight %}
+```
 
 **Read Large File** 
 
 Does not load whole file in memory. Though exceptions are wrapped in UncheckedIOException.
 
-{% highlight java %}
+```
 try(Stream<String> stream : Files.lines(Paths.get(“absolute-path”))){
    stream.forEach(System.out::println);  
 }
-{% endhighlight %}
+```
 
 **Group By**
 
 
-{% highlight java %}
+```
 Map<Person.Sex, List<Person>> byGender 
     = roster.stream().collect(Collectors.groupingBy(Person::getGender));
 
@@ -97,7 +97,7 @@ Map<Department, Integer> totalByDept
 // Partition students into passing and failing
 Map<Boolean, List<Student>> passingFailing 
     = students.stream().collect(Collectors.partitioningBy(s -> s.getGrade() >= PASS_THRESHOLD));
-{% endhighlight %}
+```
 
 
 ### Comparators
@@ -140,11 +140,11 @@ Operations
 
 ### CompletionStage
 
-{% highlight java %}
+```
 stage.thenApply(x -> square(x))
         .thenAccept(x -> System.out.println(x))
         .thenRun(() -> System.out.println(“done”));
-{% endhighlight %}
+```
 Each above functions have async variant
 
 ### CompletableFuture (= Future + CompletionStage)
@@ -153,13 +153,13 @@ Basically provide a call back to the future itself, so that as soon the result i
 
 Also, the program itself becomes more fluent and readable. 
 
-{% highlight java %}
+```
      CompletableFuture.supplyAsync(() -> getStockInfo(“GOOGL”), executor)   // if executor is not passed it uses internal pool
  			.whenComplete((info, exec) -> System.out.println(info))
 			.thenApply(Stock::getRate)
 			.thenAccept(rate -> System.out.println(rate))
 			.thenRun(() -> System.out.println(“done”)));
-{% endhighlight %}
+```
 
 So when you trigger this, then it immediately returns the CompletableFuture, and then you can check its methods below to check status and such if needed. 
 
@@ -175,7 +175,7 @@ So when you trigger this, then it immediately returns the CompletableFuture, and
 
 So you return a new CompletableFuture immediately, and keep its reference so that while processing and after processing you can trigger the right methods on it (complete)
 
-{% highlight java %}
+```
 
 CompletionStage<String> getWebpage(URL url){
 
@@ -195,7 +195,7 @@ CompletionStage<String> getWebpage(URL url){
     pool.execute(task);
     return future;
 }
-{% endhighlight %}
+```
 
 
 ### StampedLock 
