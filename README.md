@@ -11,6 +11,9 @@ Each Company/Panel/Interviewee has their favorite topics, which can vary from JV
 Topics also vary based on your experience and role you are applying for. 
 Research other candidates' interview experiences at the company, or better yet, just ask the recruiter.
 
+These are study notes, mostly for week/day before the interview revisions. Check resources on each topic 
+for in-depth preparation. 
+
 ## Table Of Contents 
 
 ### Core Java
