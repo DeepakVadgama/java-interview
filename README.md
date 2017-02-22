@@ -37,7 +37,7 @@ Research for other candidates' interview experience at the company, or better ye
 - Web
 - Computer Science
 
-### Advanced / Frameworks / Libraries
+### Other topics 
 
 - [Spring Boot overview (DI, Security, JPA, Testing)](http://http://deepakvadgama.com/blog/spring-boot-wonders/)
 - [JavaScript basics]()

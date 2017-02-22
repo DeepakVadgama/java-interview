@@ -39,21 +39,21 @@ private static String manualIntern(final String str){
 }
 ```
 
-### [Thread Affinity]
+### Thread Affinity
 
 Makes the thread stick to a CPU core, even if it has no tasks left to perform. Unlike normal threads, this won't go into sleep/wait.
 Thread performs busy-spin. Note: This is wasting of CPU resources, and it can lead to thread starvation since other threads
 do not get access to that core. Thus, it needs to be used for the right applications. Helpful in latency critical applications like FX Trading. 
 
-Thread affinity only works for Linux and there are[Java libraries available](https://github.com/OpenHFT/Java-Thread-Affinity) to use the same
+Thread affinity only works for Linux and there are [Java libraries available](https://github.com/OpenHFT/Java-Thread-Affinity) to use the same
 
 ### Other topics
 
-- [How does default hashCode work?](https://srvaroa.github.io/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html)
+- [How does default hashCode method work?](https://srvaroa.github.io/jvm/java/openjdk/biased-locking/2017/01/30/hashCode.html)
 - [What is Biased locking](https://blogs.oracle.com/dave/entry/biased_locking_in_hotspot)
-- Hoisting variables: JVM can hoist variables out of for loops to improve performance. [example](http://stackoverflow.com/a/9338302/3494368)
 - [JVM Threads link with OS threads](http://openjdk.java.net/groups/hotspot/docs/RuntimeOverview.html#Thread%20Management%7Coutline)
 - [Class Loaders](https://zeroturnaround.com/rebellabs/rebel-labs-tutorial-do-you-really-get-classloaders/)
 - [Memory consumptions of primitives and boxed variables](http://java-performance.info/overview-of-memory-saving-techniques-java/)
+- Hoisting variables: JVM can hoist variables out of for loops to improve performance. [example](http://stackoverflow.com/a/9338302/3494368)
 - Escape analysis: JVM can choose to place a method local object (if it never escapes the method) in Thread-stack instead of heap. 
  Improves performance since that object doesn't go through GC (can be just deleted once method completes). 
