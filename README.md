@@ -20,7 +20,7 @@ Research for other candidates' interview experience at the company, or better ye
 - [Java Memory Model](topics/core/java-memory-model.md)
 - [Concurrency](topics/core/concurrency.md)
 - [Garbage Collection](topics/core/garbage-collection.md)
-- JVM Internals
+- [JVM Internals](topics/core/jvm-internals.md)
 
 ### Design / Clean Code
 
