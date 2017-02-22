@@ -8,9 +8,9 @@
 
 ### Hierarchy and classes
 
-<image src="../../images/collection-hierarchy.png">
+<image src="../../images/collection-hierarchy-1.png">
 
-<image src="../../images/map-hierarchy.png">
+<image src="../../images/map-hierarchy-1.png">
 
 ### Use cases and features
 
