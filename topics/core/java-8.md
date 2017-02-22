@@ -57,7 +57,7 @@
 
 **Typical**
 
-```
+```java
 books.stream()
        .filter(book -> book.year > 2005)  // filter out books published in or before 2005
        .map(Book::getAuthor)              // get the list of authors for the remaining books
@@ -70,7 +70,7 @@ books.stream()
 
 Does not load whole file in memory. Though exceptions are wrapped in UncheckedIOException.
 
-```
+```java
 try(Stream<String> stream : Files.lines(Paths.get(“absolute-path”))){
    stream.forEach(System.out::println);  
 }
@@ -79,7 +79,7 @@ try(Stream<String> stream : Files.lines(Paths.get(“absolute-path”))){
 **Group By**
 
 
-```
+```java
 Map<Person.Sex, List<Person>> byGender 
     = roster.stream().collect(Collectors.groupingBy(Person::getGender));
 
@@ -140,7 +140,7 @@ Operations
 
 ### CompletionStage
 
-```
+```java
 stage.thenApply(x -> square(x))
         .thenAccept(x -> System.out.println(x))
         .thenRun(() -> System.out.println(“done”));
@@ -153,7 +153,7 @@ Basically provide a call back to the future itself, so that as soon the result i
 
 Also, the program itself becomes more fluent and readable. 
 
-```
+```java
      CompletableFuture.supplyAsync(() -> getStockInfo(“GOOGL”), executor)   // if executor is not passed it uses internal pool
  			.whenComplete((info, exec) -> System.out.println(info))
 			.thenApply(Stock::getRate)
@@ -175,8 +175,7 @@ So when you trigger this, then it immediately returns the CompletableFuture, and
 
 So you return a new CompletableFuture immediately, and keep its reference so that while processing and after processing you can trigger the right methods on it (complete)
 
-```
-
+```java
 CompletionStage<String> getWebpage(URL url){
 
     CompletableFuture<String> future = new CompletableFuture<>();
