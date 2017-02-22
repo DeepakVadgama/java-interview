@@ -1,15 +1,15 @@
 ## Java interview
 
 I created study notes for my recent interviews. I am sharing them here so that others can benefit from it. 
-The notes are specifically for non-coding Java interviews, typically done in service based companies.  
-
+The notes are specifically for theory based Java interviews, typically done in service based companies 
+(as opposed to coding based interviews done in product companies).  
 
 ### How to use it?
 
 Pick and choose the topics based on the company you are interviewing. 
 Each Company/Panel/Interviewee has their favorite topics, which can vary from JVM internals to high level system design. 
-Topics can also vary based on your experience and role you are applying for. 
-Research for other candidates' interview experience at the company, or better yet, just ask the recruiter.
+Topics also vary based on your experience and role you are applying for. 
+Research for other candidates' interview experiences at the company, or better yet, just ask the recruiter.
 
 ## Table Of Contents 
 
@@ -24,11 +24,12 @@ Research for other candidates' interview experience at the company, or better ye
 
 ### Design / Clean Code
 
-- SOLID Principles
+- [SOLID Principles](topics/design/solid.md)
 - Clean Code
 - Effective Java
 - Design Patterns
 - Scalability
+- [Approach to Design Questions](topics/design/approach.md)
 
 ### Related topics
 
@@ -42,9 +43,9 @@ Research for other candidates' interview experience at the company, or better ye
 - [Spring Boot overview (DI, Security, JPA, Testing)](http://http://deepakvadgama.com/blog/spring-boot-wonders/)
 - [JavaScript basics]()
 
-### Probable Questions
+### Opinion based questions
 
-Answers of such questions vary based on multiple factors (interviewer and interviewee's experience with Java, exposure to other languages, personal taste, etc). Thus, take the answers with pinch of salt, and make them your own before using them.
+Answers to such questions vary based on multiple factors (interviewer and interviewee's experience with Java, exposure to other languages, personal taste, etc). Thus, take the answers with pinch of salt, and make them your own before using them.
 
 - What do you like about Java?
 - What do you not like about Java?
