@@ -22,3 +22,10 @@
 - 
 - 
 - 
+
+### Inner classes
+
+- Static inner class
+- Inner class
+- Method local inner class
+- 
