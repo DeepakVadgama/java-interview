@@ -96,38 +96,124 @@ Collection of unique elements. No duplicates.
     + Recommended where reads vastly outnumber writes and set size is small.
     
 - **EnumSet**
-    + To be used with Enum types
-    + Very efficient and fast (backed by bit-vectors)
-    + Weakly consistent iterators 
-    + Nulls not allowed
+    + To be used with Enum types.
+    + Very efficient and fast (backed by bit-vectors).
+    + Weakly consistent iterators. 
+    + Nulls not allowed.
 
 ### Maps
 
 - **HashMap**
-- **Hashtable**
-- **ConcurrentHashMap**
-- **TreeMap**
-- **ConcurrentSkipListMap**
+    + key, value pairs.
+    + Permits a null key, and null values.
+    + Iteration order not guaranteed.
+    + Throws ConcurrentModificationException.
+    + [Article detailing implementation](http://www.deepakvadgama.com/blog/java-hashmap-internals/).
 
+- **HashMap implementation details**
+    + Backed by array (buckets), array-size is known as table-size.
+    + Position in array = element-hash % table-size. 
+    + If elements end up in same bucket, they are added to linked-list (or a balanced red-black tree).
+    + O(1) access (if hashcode properly distributes the values, else O(n) for linked-list & O(log(n)) for tree.
+    + Load factor - 0.75 default, decides when table-size should increase (double). 
+    + Bigger load-factor - more space-efficient, reduced speed (due to more elements in same bucket).
+    + Lower load-factor - less space-efficient, more speed (less, ideally 1 element in 1 bucket).
+    + Initial table-size = 16.
+
+- **LinkedHashMap**
+    + Insertion order is retained.
+
+- **Hashtable**
+    + Thread-safe.
+    + Not used anymore, ConcurrentHashMap recommended.
+
+- **ConcurrentHashMap**
+    + Thread-safe.
+    + Fine grained locking called striped locking (map is divided into segments, each with associated lock. Threads holding different locks don't conflict).
+    + Improved performance over Hashtable.
+
+- **TreeMap**
+    + Sorted by keys. 
+    + Uses Red-Black tree implementation. 
+
+- **ConcurrentSkipListMap**
+    + Thread-safe version of TreeMap.
+    + Navigable (floor, ceiling, higher, lower, headSet, tailSet operations).
 
 ### Queues
 
-- **Queue**
-- **Deque**
-- **BlockingQueue**
-- **PriorityQueue**
+- **LinkedList**
+    + Implements Queue interface. 
+    + offer, peek, poll operations.
+    + Use case - task queues
 
+- **ArrayBlockingQueue**
+    + Thread-safe.
+    + Backed by array. Thus bounded in size.  
+    + Adding element to full queue results in blocking.
+    + Polling an empty queue results in blocking.
+    + Use case - Producer consumer problem.
+    
+- **LinkedBlockingQueue**
+    + Thread-safe.
+    + Backed by linked-list.
+    + Optionally bounded in size. Takes maxSize as constructor argument. 
+    + 
+
+- **ConcurrentLinkedQueue**
+    + 
+
+- **ArrayDeque**
+    + 
+
+- **LinkedBlockingDeque**
+    + Blocks 
+
+- **ConcurrentLinkedDeque**
+    + Thread-safe.
+    + Lock free. Faster than LinkedBlockingDeque.
+
+- **PriorityQueue**
+    + Elements sorted based on their natural order (or Comparator provided in Constructor).
+    + Use case - task queues where tasks can have different priorities.
+    
+- **PriorityBlockingQueue**
+    + Thread-safe.
+    
+- **DelayQueue**
+    + Elements added, are available to be removed only after their delay-time is expired. 
+
+- **SynchronousQueue**
+    + Holds single elements.
+    + Blocks for both producer and consumer to arrive.
+    + Use case - For safe/atomic transfer of objects between threads.
+    
 
 ### equals and hashCode
 
 - equals required for all collections. 
-- equals and hashCode required for Maps and Sets (which are backed by Maps)
-
+- equals and hashCode required for Maps and Sets (which are backed by Maps).
 
 ### Collections class
 
-- Sorting
-- Binary Search
+**Utility methods**
+
+- sort(list, key) - guarantees stable sort
+- reverse 
+- reverseOrder - returns Comparator for reversed order
+- shuffle
+- rotate(list, distance) - rotates elements by the distance specified 
+- binarySearch(list, key) 
+    + list should be sorted else can get unpredictable results 
+    + log(n) if list implements RandomAccess, else O(n)
+    + RandomAccess - Marker interface that says, collection supports fast random access (get(i)) 
+
+**Methods returning wrapped instances**
+
+- empty - emptyList, emptySet, emptyMap etc.
+- synchronized - synchronizedList, synchronizedSet, synchronizedMap etc. 
+- unmodifiable - unmodifiableList, unmodifiableSet, unmodifiableMap etc. 
+- singleton(t) - singleton (returns set), singletonList, singletonMap etc.
 
 ### Hierarchy and classes
 
