@@ -221,9 +221,3 @@ Collection of unique elements. No duplicates.
 <image src="../../images/collection-hierarchy-2.png">
 
 <image src="../../images/map-hierarchy-2.png">
-
-<style scoped type="text/css">
-.markdown-body li+li {
-    margin-top: 0;
-}
-</style>
