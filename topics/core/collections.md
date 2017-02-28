@@ -6,9 +6,19 @@
 - [Cheat sheet](http://files.zeroturnaround.com/pdf/zt_java_collections_cheat_sheet.pdf) (PDF)
 - [Effective Java study notes](topics/design/effective-java.md)
 
+### Table of contents
+
+- [Lists](#lists)
+- [Sets](#sets)
+- [Maps](#maps)
+- [Queues](#queues)
+- [equals and hashCode](#equals-and-hashcode)
+- [Collections class](#collections-class)
+- [Hierarchy and classes](#hierarchy-and-classes)
+
 ### Collection Classes
 
-### Lists 
+### Lists
 
 - **ArrayList**
     + Backed by array (which are co-located in memory), thus fast iteration and get(i) operation.
@@ -76,10 +86,6 @@ Collection of unique elements. No duplicates.
     + Log(n) time for add/remove/contains operations.
     + Navigable (floor, ceiling, higher, lower, headSet, tailSet operations).
     + Fail fast iterators.
-
-- **Collections.synchronizedSortedSet**
-    + Wrapper over any of the above sets. 
-    + Thread-safe.
 
 - **ConcurrentSkipListSet**
     + Thread-safe.
@@ -158,20 +164,16 @@ Collection of unique elements. No duplicates.
     + Thread-safe.
     + Backed by linked-list.
     + Optionally bounded in size. Takes maxSize as constructor argument. 
-    + 
 
 - **ConcurrentLinkedQueue**
-    + 
+    + Thread-safe. 
+    + Uses CAS (Compare-And-Swap) for more throughput. Also known as lock free. 
 
-- **ArrayDeque**
-    + 
-
-- **LinkedBlockingDeque**
-    + Blocks 
-
-- **ConcurrentLinkedDeque**
-    + Thread-safe.
-    + Lock free. Faster than LinkedBlockingDeque.
+- **Deque classes**
+    + ArrayDeque - Double ended queue. Backed by array. Can throw ConcurrentModificationException.
+    + LinkedList - Implements Deque interface.  
+    + LinkedBlockingDeque
+    + ConcurrentLinkedDeque
 
 - **PriorityQueue**
     + Elements sorted based on their natural order (or Comparator provided in Constructor).
@@ -187,7 +189,6 @@ Collection of unique elements. No duplicates.
     + Holds single elements.
     + Blocks for both producer and consumer to arrive.
     + Use case - For safe/atomic transfer of objects between threads.
-    
 
 ### equals and hashCode
 
@@ -206,7 +207,7 @@ Collection of unique elements. No duplicates.
 - binarySearch(list, key) 
     + list should be sorted else can get unpredictable results 
     + log(n) if list implements RandomAccess, else O(n)
-    + RandomAccess - Marker interface that says, collection supports fast random access (get(i)) 
+    + RandomAccess - Marker interface that says, collection supports fast random access, get(i). Typically backed by arrays. 
 
 **Methods returning wrapped instances**
 
