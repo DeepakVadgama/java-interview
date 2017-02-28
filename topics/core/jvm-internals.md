@@ -1,6 +1,6 @@
 ## JVM Internals
 
-Some of the topics listed below are tricks JVM use to improve performance. Subset of these can be exploited to further improve 
+Some of the topics listed below are tricks JVM uses to improve performance. Subset of these can be exploited to further improve 
 application performance. 
 
 Note: These topics are highly unlikely to come up in an interview. Feel free to just glance through without digging deep. 

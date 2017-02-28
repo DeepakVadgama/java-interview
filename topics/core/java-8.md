@@ -1,6 +1,6 @@
 ## Java 8
 
-### Stream
+### Streams
 
 **Create**
 
@@ -154,11 +154,11 @@ Basically provide a call back to the future itself, so that as soon the result i
 Also, the program itself becomes more fluent and readable. 
 
 ```java
-     CompletableFuture.supplyAsync(() -> getStockInfo(“GOOGL”), executor)   // if executor is not passed it uses internal pool
- 			.whenComplete((info, exec) -> System.out.println(info))
-			.thenApply(Stock::getRate)
-			.thenAccept(rate -> System.out.println(rate))
-			.thenRun(() -> System.out.println(“done”)));
+ CompletableFuture.supplyAsync(() -> getStockInfo(“GOOGL”), executor)   // if executor is not passed it uses internal pool
+        .whenComplete((info, exec) -> System.out.println(info))
+        .thenApply(Stock::getRate)
+        .thenAccept(rate -> System.out.println(rate))
+        .thenRun(() -> System.out.println(“done”)));
 ```
 
 So when you trigger this, then it immediately returns the CompletableFuture, and then you can check its methods below to check status and such if needed. 
