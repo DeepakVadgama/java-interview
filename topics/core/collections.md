@@ -16,7 +16,7 @@
 - [Collections class](#collections-class)
 - [Hierarchy and classes](#hierarchy-and-classes)
 
-### Collection Classes
+---
 
 ### Lists
 
@@ -70,6 +70,8 @@
 - Iterations have to be externally synchronized by developer 
 - Can throw ConcurrentModificationException if (above mentioned) synchronization not done during iteration.
 
+---
+
 ### Sets
 
 Collection of unique elements. No duplicates. 
@@ -119,6 +121,8 @@ Collection of unique elements. No duplicates.
 - Weakly consistent iterators. 
 - Nulls not allowed.
 
+---
+
 ### Maps
 
 #### HashMap
@@ -164,6 +168,8 @@ Collection of unique elements. No duplicates.
 
 - Thread-safe version of TreeMap.
 - Navigable (floor, ceiling, higher, lower, headSet, tailSet operations).
+
+---
 
 ### Queues
 
@@ -218,15 +224,18 @@ Collection of unique elements. No duplicates.
 - Blocks for both producer and consumer to arrive.
 - Use case - For safe/atomic transfer of objects between threads.
 
+---
+
 ### equals and hashCode
 
 - equals required for all collections. 
 - equals and hashCode required for Maps and Sets (which are backed by Maps).
 
+---
+
 ### Collections class
 
 #### Utility methods
-
 
 - sort(list, key) - guarantees stable sort
 - reverse 
@@ -240,11 +249,12 @@ Collection of unique elements. No duplicates.
 
 #### Methods returning wrapped instances
 
-
 - empty - emptyList, emptySet, emptyMap etc.
 - synchronized - synchronizedList, synchronizedSet, synchronizedMap etc. 
 - unmodifiable - unmodifiableList, unmodifiableSet, unmodifiableMap etc. 
 - singleton(t) - singleton (returns set), singletonList, singletonMap etc.
+
+---
 
 ### Hierarchy and classes
 
