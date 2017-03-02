@@ -30,7 +30,7 @@ for in-depth preparation.
 
 - [SOLID Principles](topics/design/solid.md)
 - Clean Code
-- Effective Java
+- [Effective Java](topics/design/effective-java.md)
 - [Design Patterns](topics/design/design-patterns.md)
 - Scalability
 - [Approach to Design Questions](topics/design/approach.md)

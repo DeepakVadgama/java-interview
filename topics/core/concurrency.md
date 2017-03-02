@@ -367,7 +367,7 @@ Locks can be fair/unfair. Fair locks implement queues to handle requests for a l
 - Great for data structure with lot of reads
 - More complex to implement thus slightly slower than reentrant lock
 
-Implementation factors
+**Implementation factors**
 
 - Release preference - If writer is running, and readers+writers are waiting, preference to writer?
 - Reader barging - If reader is running, and readers+writers are waiting, preference to reader? Good for throughput but writer can become starved
@@ -383,7 +383,7 @@ Explicit class called Condition for implementing conditional queues (which can b
 
 Condition is associated with single lock. Lock.newCondition()
 
-Advantages:
+**Advantages**
 
 - Fairness in wait
 - Timeout facility (flexibility)
