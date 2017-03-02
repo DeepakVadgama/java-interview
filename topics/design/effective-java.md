@@ -1,12 +1,14 @@
 ## Effective Java
 
-### Resources
+## Resources
 
 - [Effective Java by Joshua Bloch](https://www.amazon.com/Effective-Java-2nd-Joshua-Bloch/dp/0321356683) -- Highly recommended
 
-### Creating and Destroying Objects
+------
 
-{% octicon chevron-right %} Consider static builders
+## Creating and Destroying Objects
+
+### Consider static builders
 
 **Advantages**
 
@@ -24,26 +26,26 @@
 - Cannot subclass and take advantage of constructors. Though this enforces Composition instead of inheritance, so its not so bad.
 - Cannot easily distinguish between constructing methods, and other methods. Need to use some convention to make it easy. Eg: newInstance, valueOf, of etc.
 
-{% octicon chevron-right %} Builder pattern
+### Builder pattern
 
 - When too many parameters use builders instead.
 - In Builders, each parameter setting can be through a good name method. In constructor its difficult to remember.
 - Can easily add optional parameter support.
 
-{% octicon chevron-right %} Singleton with private instance or enum
+### Singleton with private instance or enum
 
-{% octicon chevron-right %} Private Constructor
+### Private Constructor
 
-{% octicon chevron-right %} Avoid creating unnecessary objects
+### Avoid creating unnecessary objects
 - Eg: Sring abc = new String("some value"); instead use String abc = "some value";
 - Choose primitives over boxed, check for unnecessary boxing and unboxing
 
-{% octicon chevron-right %} Clear memory references
+### Clear memory references
 - Let objects go out of scope quickly
 - If not, nullify reference (eg: Stack.pop, within method, elements[size] = null)
 - Check caches and message listeners, they hold references
 
-{% octicon chevron-right %} Avoid finalizers
+### Avoid finalizers
 - JVM doesn't guarantee they will be called
 - If called, they can be called anytime, not immediately after object is eligible for GC
 - Never release resource in finalizer, if it doesnt run, the resource will still be lock (or in inconsistent state)
@@ -51,24 +53,24 @@
 - Instead use explicit close methods like OutputStream, java.sql.Connection etc
 - These classes also use finalizers, but thats safety net
 
-### Methods common to all objects
+## Methods common to all objects
 
-{% octicon chevron-right %} equals
+### equals
 - If super class has implemented equals, then its okay to not implement (eg: Set used AbstractSet)
 - Reflexive (equal to self), transitive, symmetric, consistent (unless modified)
 - Maintain Liskov Substitution Principle, within equals (don't check o.getClass() == this.getClass() instead check with instanceof
 - Consistent - Don't use external resources (eg: IP address)
 
-{% octicon chevron-right %} hashcode
+### hashcode
 - every class which overrides equals must have it
 - Consistent across multiple calls
 - Dont use any fields, which are not used for equals
 - You can exclude redundant fields (ones which are always same for all objects)
 - You can cache the hashcode and return that (like String class), but then need to track if value is modified.
 
-{% octicon chevron-right %} toString
+### toString
 
-{% octicon chevron-right %} clone
+### clone
 - Cloneable interface. Its a mixin interface. Does not have clone method.
 - Object class's clone method is protected
 - Atypical - Presence of Colenable modifies behavior of Object.clone() behavior. If present it returns object which is field by field copy, and if not present, then .clone method throws CloneNotSupportedException
@@ -82,22 +84,22 @@
 - Clone method must be synchronized in case of concurrency
 - In short, you are better off, creating and using a copy-constructor
 
-{% octicon chevron-right %} comparable
+### comparable
 - Opposing sign for symmetry x.compareTo(y) == -y.compareTo(x)
 - If compareTo returns 0, objects should ideally be equal (but thats not in contract)
 - Weird: Inserting new BigDecimal("1.0") and new BigDecimal("1.00") in HashSet stores 2 elements (they use equals), while TreeSet stores only 1 element (they use compareTo)
 
-### Classes and Interfaces
+## Classes and Interfaces
 
-{% octicon chevron-right %} accessible
+### accessible
 - Make fields, classes etc as much inaccessible as possible (private, protected, package, then public)
 - Anything that is public is now part of API, thus difficult to make private later
 
-{% octicon chevron-right %} Private fields with accessor methods
+### Private fields with accessor methods
 - Helps in validating inputs (setters)
 - Helps in returning copies in outputs (getters)
 
-{% octicon chevron-right %} Make fields as much immutable as possible
+### Make fields as much immutable as possible
 - Immutable objects are simple
 - They are thread-safe
 - They can be shared freely
@@ -105,7 +107,7 @@
 - Can take advantage of cached hashCode & lazyInit hashCode
 - Only disadvantage is memory use
 
-{% octicon chevron-right %} Composition over inheritance
+### Composition over inheritance
 - Inheritance violates encapsulation, if super class changes sub-class behavior changes even if its not touched
 - Super class can later add method, sub-class havent thought of
 - In fact, it can add method which mutates the state which sub-class never promised to do.
@@ -114,11 +116,11 @@
 - Such classes are called Wrapper classes (decoration pattern)
 - Only problem is library/frameworks do not know of your class type, and can't trigger message callbacks and such.
 
-{% octicon chevron-right %} Override in inheritance
+### Override in inheritance
 - Constructor must not call method (which is overridden), because super() constructor will call override() of subclass, which is not yet constructed
 - Same problems can occur with clone and readObject (so avoid inheritance with Cloneable and Serializable)
 
-{% octicon chevron-right %} Prefer interfaces to abstract classes
+### Prefer interfaces to abstract classes
 - Classes can be retrofitted to have more interfaces
 - Interfaces allow mix-in types (markup), without need to implement any methods
 - Interfaces allow cross-types (eg: SingerWriter implements Singer, Writer)
@@ -126,34 +128,34 @@
 - If class cannot extend Skeletal (Abstract) class, we can implement the Interface, and have Skeletal class instance as composition field, and delegate all interface methods, to skeletal class instance. This is called, simulated multiple inheritance.
 - Disadvantage: Once release, interfaces are impossible to change (all implementations need to be updated)
 
-{% octicon chevron-right %} Class hierarchies over tagged classes
+### Class hierarchies over tagged classes
 - Lot of boilerplate in tagged classes: Enums, fields, switch statements
 - Memory issue: Tagged classes can contains fields specific for one type, but object of all types will have those extra fields.
 
-{% octicon chevron-right %} Function objects to represent strategies
+### Function objects to represent strategies
 - Use classes (stateless) to represent computation. This can be passed around. Ex: StringLengthComparator
 
-{% octicon chevron-right %} Favor static member class over non-static
+### Favor static member class over non-static
 - Every non-static class object has instance of enclosing class. Takes more memory.
 - Non-static class instances cannot be created without creating instances of enclosing class
 - Though one valid use of non-static class is, implementing Iterator for the class
 - Static classes are typically used to create Helper classes
 - Defining them public or private depends on whether you want to expose it in API
 
-### Generics
+## Generics
 
-{% octicon chevron-right %} Don't use Raw types
+### Don't use Raw types
 - Using types in all reference variables, helps in safety and avoiding boilerplate of casting
 - Use generic fields (public E element) in class
 - Use generic methods (public static <E> Set<E> union(Set<E> s1, Set<E> s2)).. <E> helps in type inference
 
-{% octicon chevron-right %} Prefer Lists to arrays
+### Prefer Lists to arrays
 - Arrays are covariant (Object[] a = new Long[]), but it fails at runtime (a[0] = "string value");
 - Arrays retain types at runtime (reified) thus they throw ArrayStoreExceptions. Lists (generics) do type erasure at compile time.
 
-### Enums and Annotations
+## Enums and Annotations
 
-{% octicon chevron-right %} Enums instead of int constants
+### Enums instead of int constants
 - Enums provide name space. If you use int constants for 2 different Type hierarchies (AppleTypes & OrangeTypes), you can pass value of one to method of another, accidently, and compiler wont complain
 - Enums are iterable. Cannot iterate over int constants
 - Enums have default toString. Cannot sysout int constants (they will print numbers which are not helpful)
@@ -162,29 +164,29 @@
 - EnumSet instead of Bit set (way to define union of types eg: STYLE_BOLD | STYLE_ITALIC), instead just use EnumSet.of(STYLE_BOLD, STYLE_ITALIC).
 - EnumMap
 
-{% octicon chevron-right %} Prefer annotations over naming patterns
+### Prefer annotations over naming patterns
 - Eg: @Test instead of all method names starting with test
 - Annotations have retention policy. Eg: RetentionPolicy.RUNTIME
 - Annotations have target. Eg: @Target(ElementType.METHOD)
 
-### Methods
+## Methods
 
-{% octicon chevron-right %} Definition
+### Definition
 - Choose method names carefully - they are part of API
 - Choose parameter types as interfaces instead of implementations
 - Long list of methods with identically typed parameters is wrong
 - Dont have too many parameters
 - Prefer Enum over boolean
 
-{% octicon chevron-right %} Var args
+### Var args
 - If method needs to take 1 or more, then have 1st param, then 2nd as var..args
 - Arrays.asList() was a mistake, because you can pass multiple values to it, but if you pass array to it, then it considers that as var..args with single element of type array.
 - Instead it should have had Arrays.gather(T... args) and then return Arrays.asList(args)
 
-{% octicon chevron-right %} Return empty collections instead of null
+### Return empty collections instead of null
 - These return values are iterable
 
-### General
+## General
 
 - Avoid float and double for exact answers use BigDecimal
 - Avoid boxed, (== doesnt work), and constant boxing-unboxing takes CPU
@@ -195,7 +197,7 @@
 - Prefer Executors and Tasks to threads
 - Prefer concurrency classes instead of wait notify
 
-{% octicon chevron-right %} Use Serializable Judiciously
+### Use Serializable Judiciously
 - Like APIs once serialized, then cant change class structure
 - Increases testing burden (backwards compatible)
 - Increases security loopholes, because it does not use default constructor
