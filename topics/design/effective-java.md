@@ -30,7 +30,12 @@
 
 #### Singleton with private instance or enum
 
+- static final variable (also provides init guarantee)
+- Lazy loading (double checked) 
+- Enums (by default lazy, and provides init guarantee)
+
 #### Private Constructor
+
 
 #### Avoid creating unnecessary objects
 - Eg: Sring abc = new String("some value"); instead use String abc = "some value";
@@ -42,12 +47,12 @@
 - Check caches and message listeners, they hold references
 
 #### Avoid finalizers
-- JVM doesn't guarantee they will be called
+- JVM does not guarantee they will be called
 - If called, they can be called anytime, not immediately after object is eligible for GC
-- Never release resource in finalizer, if it doesnt run, the resource will still be lock (or in inconsistent state)
+- Never release resource in finalizer, if it does not run, the resource will still be lock (or in inconsistent state)
 - Hampers performance
 - Instead use explicit close methods like OutputStream, java.sql.Connection etc
-- These classes also use finalizers, but thats safety net
+- These classes also use finalizers, but that is safety net
 
 -----------
 
@@ -91,7 +96,7 @@
 
 ### Classes and Interfaces
 
-#### accessible
+#### Accessibility
 - Make fields, classes etc as much inaccessible as possible (private, protected, package, then public)
 - Anything that is public is now part of API, thus difficult to make private later
 
@@ -155,6 +160,8 @@
 - Arrays are covariant (Object[] a = new Long[]), but it fails at runtime (a[0] = "string value");
 - Arrays retain types at runtime (reified) thus they throw ArrayStoreExceptions. Lists (generics) do type erasure at compile time.
 
+-----------
+
 ### Enums and Annotations
 
 #### Enums instead of int constants
@@ -195,7 +202,7 @@
 ### General
 
 - Avoid float and double for exact answers use BigDecimal
-- Avoid boxed, (== doesnt work), and constant boxing-unboxing takes CPU
+- Avoid boxed, (== does not work), and constant boxing-unboxing consumes CPU
 - Use StringBuilder instead of direct concatenation
 - Refer to objects by their interfaces
 - Use checked exceptions for recoverable conditions, and runtime exceptions for programming errors
