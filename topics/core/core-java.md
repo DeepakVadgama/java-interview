@@ -53,7 +53,7 @@ topics like inheritance, interfaces, etc. please read the book mentioned below.
 
 ### Varargs, boxing, widening
 
-- Primitive Widening > Boxing > Varargs [example](http://stackoverflow.com/a/2128068/3494368) 
+- Primitive Widening > Boxing > Varargs. [Example](http://stackoverflow.com/a/2128068/3494368). 
 - Widening then Boxing not allowed. 
 - Boxing then Widening allowed.   
 - Widening between wrapper classes not allowed (eg: Long n = new Integer(10); not allowed)
@@ -80,4 +80,4 @@ Also, this topic does not come up a lot in interviews, so just skimp through.
 - clone method (protected) of Object class returns shallow copy. Need to be explicitly cast back.
 - Requires class to implement Cloneable marker interface. Else returns CloneNotSupportedException
 - Singletons should override clone method and throw CloneNotSupportedException
-- [More details](effective-java.md#clone)
+- [More details](topics/design/effective-java.md#clone)

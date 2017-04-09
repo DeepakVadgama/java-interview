@@ -6,14 +6,8 @@ The notes are specifically for theory based Java interviews, typically done in s
 
 ### How to use it?
 
-These are study notes, mostly for week/day before the interview revisions. Check resources on each topic 
-for in-depth preparation.
-
-**Note**: Pick and choose the topics based on the company you are interviewing. 
-Each Company/Panel/Interviewee has their favorite topics, which can vary from JVM internals to high level system design. 
-Topics also vary based on your experience and role you are applying for. 
-Research other candidates' interview experiences at the company, or better yet, just ask the recruiter.
-
+These are study notes, mostly for revision couple of days before the interview. Check resources on each topic 
+for more in-depth preparation.
 
 ## Table Of Contents 
 
