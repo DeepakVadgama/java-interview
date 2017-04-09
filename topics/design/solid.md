@@ -6,3 +6,6 @@
 - I = Interface Segregation - Multiple specific interfaces are better than big general one
 - D = Dependency Injection - High level and Low level modules should both depend on abstraction
 
+## Object oriented principles
+
+- 

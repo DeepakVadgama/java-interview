@@ -80,4 +80,4 @@ Also, this topic does not come up a lot in interviews, so just skimp through.
 - clone method (protected) of Object class returns shallow copy. Need to be explicitly cast back.
 - Requires class to implement Cloneable marker interface. Else returns CloneNotSupportedException
 - Singletons should override clone method and throw CloneNotSupportedException
-- [More details](topics/design/effective-java.md#clone)
+- [More details](../design/effective-java.md#clone)
