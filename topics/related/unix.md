@@ -6,15 +6,12 @@
 
 ### Find files
 
-| command | action |   
-| -- | -- |   
-| find dir -type f | Find all files in the directory |   
-| find dir -type d | File all directories within this directory |   
-| find dir -name “a*.mp3” -print0 | Find all files/directory with name like a***.mp3 |   
-| find dir -type f -name “a*.txt” | Find all files (recursively) with name like a***.txt |   
-| find dir -type f -print0  xargs -0 grep -l "word" | List file names with matching word. Find is fast, and can deal with file names   with spaces and meta characters | 
-| find dir -type f -print0 &#124; xargs -0 mv -t | Move all files from dir tree into single directory |  
-
+- `find dir -type f` Find all files in the directory   
+- `find dir -type d` File all directories within this directory   
+- `find dir -name “a*.mp3” -print0` Find all files/directory with name like a***.mp3   
+- `find dir -type f -name “a*.txt”` Find all files (recursively) with name like a***.txt   
+- `find dir -type f -print0 &#124; xargs -0 grep -l "word"` List file names with matching word. 
+- `find dir -type f -print0 &#124; xargs -0 mv -t` Move all files from dir tree into single directory  
 
 ### Search in files
 
