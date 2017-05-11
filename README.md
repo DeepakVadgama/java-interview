@@ -33,7 +33,7 @@ for more in-depth preparation.
 ### Related topics
 
 - [SQL](topics/related/sql.md) 
-- UNIX 
+- [UNIX](topics/related/unix.md)
 - Web
 - Computer Science Basics
 
