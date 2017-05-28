@@ -31,10 +31,11 @@
 ### HTTP Caching
 
 - **ETag**: Fingerprint of the resource (eg: MD5 checksum), to indicate if resource is changed. 
-- **no-cache, must-revalidate**: Re-use response only after re-validating if resource is updated. 
+- **no-cache**: Cache but use only after re-validating if resource is updated.
 - **no-store**: Do not cache, and re-download for each request. 
 - **max-age**: Amount in seconds the resource can be cached. 
-
+- **must-revalidate, max-age:30**: Re-use cache for 30 seconds, after that must revalidate. (This can avoid download if resource has not been changed even after 30 seconds)
+- **Ideal**: Have html pages as no-cache, and rename all other resources with unique file name (like md5 checksum of the file). 
 
 ### [HTTP Statuses](https://httpstatuses.com)
 
