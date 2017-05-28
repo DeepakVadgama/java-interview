@@ -24,23 +24,20 @@ for more in-depth preparation.
 ### Design / Clean Code
 
 - [SOLID Principles](topics/design/solid.md)
-- Clean Code
 - [Effective Java](topics/design/effective-java.md)
 - [Design Patterns](topics/design/design-patterns.md)
-- Scalability
 - [Approach to Design Questions](topics/design/approach.md)
+- [Testing](topics/design/testing.md)
 
 ### Related topics
 
 - [SQL](topics/related/sql.md) 
 - [UNIX](topics/related/unix.md)
-- Web
-- Computer Science Basics
+- [Web](topics/related/web.md)
 
 ### Other topics 
 
 - [Spring Boot overview (DI, Security, JPA, Testing)](http://deepakvadgama.com/blog/spring-boot-wonders/)
-- [JavaScript basics]()
 
 ### Opinion based questions
 

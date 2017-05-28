@@ -61,5 +61,5 @@ What do they look for?
 - Database replication
 - Database partitioning
 - NoSQL
-- Asynchronous (Job Queues
+- Asynchronous (Job Queues)
 
