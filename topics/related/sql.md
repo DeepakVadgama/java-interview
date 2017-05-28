@@ -43,35 +43,35 @@
 
 - Find all departments with sales more than 1000
 
-{% highlight sql %}
+```
 SELECT department, SUM(sales) AS "Total sales"
 FROM order_details	
 GROUP BY department
 HAVING SUM(sales) > 1000;
-{% endhighlight %}
+```
 
 - Print all employee ids with their manager ids
 
-{% highlight sql %}
+```
 SELECT e1.emp_id, e1.emp_mgr_id 
 FROM employee e1 LEFT JOIN employee e2 
    ON e1.emp_mgr_id = e2.emp_id
-{% endhighlight %}
+```
 
 - Print all manager names with count of directs
 
-{% highlight sql %}
+```
 SELECT e2.ename, count(e1.ename) 
 FROM employee_s e1 LEFT OUTER JOIN employee_s e2 
   ON e1.manager_id = e2.eid 
 group by e2.ename;
-{% endhighlight %}
+```
 
 
 - Print 10th highest salary
 
-{% highlight sql %}
+```
 SELECT Salary FROM
 (  SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 10 ) 
 AS Emp ORDER BY Salary LIMIT 1;
-{% endhighlight %}
+```
