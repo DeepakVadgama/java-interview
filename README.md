@@ -27,7 +27,6 @@ for more in-depth preparation.
 - [Effective Java](topics/design/effective-java.md)
 - [Design Patterns](topics/design/design-patterns.md)
 - [Approach to Design Questions](topics/design/approach.md)
-- [Testing](topics/design/testing.md)
 
 ### Related topics
 
