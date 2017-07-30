@@ -7,13 +7,14 @@ Note: These topics are highly unlikely to come up in an interview. Feel free to 
 
 ### Compressed pointers
 
-- 32 bit references can address 4GB, while 64 bit can reference 
-- Though having 64 bit reference for every object increases memory usage. JVMs use [compressed pointers](https://wiki.openjdk.java.net/display/HotSpot/CompressedOops) to address this issue. 
+- 32 bit references can address 4GB, while 64 bit can reference 2^64 bytes (though limited by OS/RAM on the machine). 
+- Having 64 bit reference for every object increases memory usage. JVMs use [compressed pointers](https://wiki.openjdk.java.net/display/HotSpot/CompressedOops) to address this issue. 
 - Basic idea is to store 32-bits per reference and then add to a base address to find final 64-bit address. 
+- Flag: `-XX:+UseCompressedOops`. Latest versions of 64-bit Java have this argument by default.  
 - Addresses upto 4gb untranslated. 
 - Addresses 4gb to 28gb, remove 3bits, because Java has 8 byte word aligned, thus 3 bits need not be stored. 
 - Important because Java has more references. In C++ memory layout follows struct layout. 
-- Java 8 has JVM args, +XX:ObjectAlignmentInBytes=16 for heap between 32gb and 64gb
+- Java 8 has JVM args, `+XX:ObjectAlignmentInBytes=16` for heap between 32gb and 64gb.
 
 ### String interning
  

@@ -6,6 +6,10 @@
 - I = Interface Segregation - Multiple specific interfaces are better than big general one
 - D = Dependency Injection - High level and Low level modules should both depend on abstraction
 
-## Object oriented principles
+## Other design principles
 
-- 
+- Code to interface not implementation
+- Favor composition over inheritance
+- Encapsulate what changes
+- Strive for loose coupling between objects
+- Principle of least knowledge = Talk only to immediate friends

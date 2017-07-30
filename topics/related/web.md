@@ -2,7 +2,7 @@
 
 ### Resources
 
-- [IP Adress Basics](http://www.deepakvadgama.com/blog/ipaddress-basics-for-developers/)
+- [IP Address Basics](http://www.deepakvadgama.com/blog/ipaddress-basics-for-developers/)
 - [HTTP Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 - [HTTP Statuses](https://httpstatuses.com)
 - [HTTP Caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
@@ -45,6 +45,13 @@
 - 403: Not authorized
 - 404: Not found
 - 500: Internal server error
+
+### [HTTP Statuses in a nutshell](https://twitter.com/stevelosh/status/372740571749572610?lang=en)
+- 10x: Hold on
+- 20x: Here you go 
+- 30x: Go away
+- 40x: You (client) screwed up
+- 50x: I (server) screwed up
 
 ### HTTP 2
 

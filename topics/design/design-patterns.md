@@ -7,12 +7,12 @@
 
 ### Creational
 
-- Singleton -  Eager (static) or Lazy (broken pre-JDK5). Eg: Logger, Configurer
-- Factory - Eg: Trade type (Bonds, Bill, Notes)
-- Abstract Factory - Factory of factories but related products. Eg: Trade Type (GermanBond, EuroBond, GermanBill, EuroBill)
+- Singleton -  Single instance of class. Either Eager (static) or Lazy (broken pre-JDK5). Eg: Logger, Configurer
+- Factory - Create types of instances. Eg: Trade type (Bonds, Bill, Notes)
+- Abstract Factory - Factory of factories of related products. Eg: Trade Type (GermanBond, EuroBond, GermanBill, EuroBill)
 - Builder - Eg: StringBuilder, PizzaMaker
 - Prototype - Copying costly-creation objects. Classes should implement clone or similar method.
-- Object pool - Eg: Threadpool
+- Object pool - Re-use instances. Eg: Threadpool
 
 ### Behavioral
 
@@ -27,15 +27,14 @@
 - Interpreter - Format converter. Eg: JVM converts byte to native for JVM.
 - Memento - Save and restore state of object.
 
-
 ### Structural
 
 - Adapter - Adapting to a non-direct-compatible class/module/system. 
-- Decorator - Eg: FileReader, BufferedReader
+- Decorator - Wrap class with another Eg: FileReader, BufferedReader
 - Facade - Hiding complexity behind simple interfaces. Eg: Turbo Tax
-- Proxy - Eg: Hibernate proxy for lazy fetch
+- Proxy - Eg: Hibernate proxy for lazy fetch. @Spy instances for JUnit/Mockito.
 - Flyweight - Store common characteristics of multiple objects in single place. Eg: Glyph for all characters in a document.
-- Bridge - 
+- Bridge - Decouple abstraction from implementation so that both can vary independently. Bridge pattern is often created using Adapter pattern. 
 - Composite - Eg: Folder and files
 
 
