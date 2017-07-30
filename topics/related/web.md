@@ -47,11 +47,10 @@
 - 500: Internal server error
 
 ### [HTTP Statuses in a nutshell](https://twitter.com/stevelosh/status/372740571749572610?lang=en)
-- 10x: Hold on
-- 20x: Here you go 
-- 30x: Go away
-- 40x: You (client) screwed up
-- 50x: I (server) screwed up
+- 20x: Success
+- 30x: Redirection
+- 40x: Client Error
+- 50x: Server Error
 
 ### HTTP 2
 
