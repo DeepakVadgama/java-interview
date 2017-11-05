@@ -4,6 +4,23 @@
 
 - [Art of Command Line](https://github.com/jlevy/the-art-of-command-line#processing-files-and-data)
 
+### Table of Contents
+
+  * [Resources](#resources)
+  * [Find](#find)
+  * [Search](#search)
+  * [Processes](#processes)
+  * [File permissions](#file-permissions)
+  * [List files](#list-files)
+  * [Symlinks](#symlinks)
+  * [Checking logs](#checking-logs)
+  * [Text manipulation](#text-manipulation)
+  * [Sed](#sed)
+  * [Networking](#networking)
+  * [Space](#space)
+  * [Miscellaneous](#miscellaneous)
+
+
 ### Find
 
 - `find dir -type f` Find all files in the directory   

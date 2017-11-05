@@ -4,7 +4,58 @@
 ### Resources
 
 - [Concurrency in Practice by Brian Goetz](http://jcip.net) - Highly Recommended
- 
+
+### Table of Contents
+
+- [Basics](#basics)
+  * [Benefits of Threads](#benefits-of-threads)
+  * [Thread safety](#thread-safety)
+  * [Race Condition](#race-condition)
+  * [Solutions to compound operations](#solutions-to-compound-operations)
+  * [Synchronized](#synchronized)
+  * [Liveness and Performance](#liveness-and-performance)
+- [Sharing Objects](#sharing-objects)
+  * [Data Visibility](#data-visibility)
+  * [Safe construction](#safe-construction)
+  * [Confinement](#confinement)
+  * [Immutability](#immutability)
+  * [Final Fields](#final-fields)
+  * [Safe Publishing](#safe-publishing)
+- [Composing Objects](#composing-objects)
+  * [State Ownership](#state-ownership)
+  * [Unmodifiable](#unmodifiable)
+  * [Client-side locking](#client-side-locking)
+- [Building Blocks](#building-blocks)
+  * [Iterators and ConcurrentModificationException](#iterators-and-concurrentmodificationexception)
+  * [Concurrent Collections](#concurrent-collections)
+  * [InterruptedException](#interruptedexception)
+  * [Synchronizers](#synchronizers)
+- [Task Execution](#task-execution)
+  * [Thread Pools](#thread-pools)
+  * [Uncaught exception handlers](#uncaught-exception-handlers)
+  * [Shutdown hooks](#shutdown-hooks)
+  * [Daemon threads](#daemon-threads)
+  * [Finalizers](#finalizers)
+- [Applying Thread Pools](#applying-thread-pools)
+  * [Thread pool sizes](#thread-pool-sizes)
+  * [ThreadPoolExecutor](#threadpoolexecutor)
+  * [Threads](#threads)
+  * [Task Queues](#task-queues)
+  * [Saturation Policy](#saturation-policy)
+  * [Thread Factory](#thread-factory)
+- [Avoiding Liveness Hazards](#avoiding-liveness-hazards)
+  * [Deadlocks](#deadlocks)
+  * [Starvation and LiveLock](#starvation-and-livelock)
+- [Performance and Scalability](#performance-and-scalability)
+  * [Costs on performance](#costs-on-performance)
+  * [Steps](#steps)
+- [Explicit Locks](#explicit-locks)
+  * [Lock and ReentrantLock](#lock-and-reentrantlock)
+  * [Advantages of lock classes](#advantages-of-lock-classes)
+  * [Read-Write lock](#read-write-lock)
+  * [Custom Synchronizer](#custom-synchronizer)
+
+
 ### Basics
 
 #### Benefits of Threads

@@ -1,5 +1,14 @@
 ## Java 8
 
+* [Streams](#streams)
+* [Examples:](#examples-)
+* [Comparators](#comparators)
+* [Concurrency](#concurrency)
+* [CompletionStage](#completionstage)
+* [CompletableFuture (= Future + CompletionStage)](#completablefuture----future---completionstage-)
+* [StampedLock](#stampedlock)
+* [@Contended](#-contended)
+
 ### Streams
 
 **Create**

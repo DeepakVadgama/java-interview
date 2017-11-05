@@ -4,7 +4,45 @@
 
 - [Effective Java by Joshua Bloch](https://www.amazon.com/Effective-Java-2nd-Joshua-Bloch/dp/0321356683) -- Highly recommended
 
-------
+### Table of Contents
+
+- [Creating and Destroying Objects](#creating-and-destroying-objects)
+  * [Consider static builders](#consider-static-builders)
+  * [Service Interface Pattern](#service-interface-pattern)
+  * [Builder pattern](#builder-pattern)
+  * [Singleton with private instance or enum](#singleton-with-private-instance-or-enum)
+  * [Private Constructor](#private-constructor)
+  * [Avoid creating unnecessary objects](#avoid-creating-unnecessary-objects)
+  * [Clear memory references](#clear-memory-references)
+  * [Avoid finalizers](#avoid-finalizers)
+- [Methods common to all objects](#methods-common-to-all-objects)
+  * [equals](#equals)
+  * [hashcode](#hashcode)
+  * [toString](#tostring)
+  * [clone](#clone)
+  * [comparable](#comparable)
+- [Classes and Interfaces](#classes-and-interfaces)
+  * [Accessibility](#accessibility)
+  * [Private fields with accessor methods](#private-fields-with-accessor-methods)
+  * [Make fields as much immutable as possible](#make-fields-as-much-immutable-as-possible)
+  * [Composition over inheritance](#composition-over-inheritance)
+  * [Override in inheritance](#override-in-inheritance)
+  * [Prefer interfaces to abstract classes](#prefer-interfaces-to-abstract-classes)
+  * [Class hierarchies over tagged classes](#class-hierarchies-over-tagged-classes)
+  * [Function objects to represent strategies](#function-objects-to-represent-strategies)
+  * [Favor static member class over non-static](#favor-static-member-class-over-non-static)
+- [Generics](#generics)
+  * [Don't use Raw types](#don-t-use-raw-types)
+  * [Prefer Lists to arrays](#prefer-lists-to-arrays)
+- [Enums and Annotations](#enums-and-annotations)
+  * [Enums instead of int constants](#enums-instead-of-int-constants)
+  * [Prefer annotations over naming patterns](#prefer-annotations-over-naming-patterns)
+- [Methods](#methods)
+  * [Definition](#definition)
+  * [Var args](#var-args)
+  * [Return empty collections instead of null](#return-empty-collections-instead-of-null)
+- [General](#general)
+  * [Use Serializable Judiciously](#use-serializable-judiciously)
 
 ### Creating and Destroying Objects
 
