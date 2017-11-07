@@ -154,13 +154,13 @@ stage.thenApply(x -> square(x))
         .thenAccept(x -> System.out.println(x))
         .thenRun(() -> System.out.println(“done”));
 ```
-Each above functions have async variant
+Each of the above calls have async variant
 
 ### CompletableFuture (= Future + CompletionStage)
 
-Basically provide a call back to the future itself, so that as soon the result is available it can react to it by triggering those callbacks. In future we do .get which waits indefinitely for the result. In completableFuture we don’t wait. 
+Basically provide a call back to the future itself, so that as soon the result is available it can react to it by triggering those callbacks. In ```future``` the method ```get``` is blocking (waits indefinitely for the result). In completableFuture the current thread is not blocked. 
 
-Also, the program itself becomes more fluent and readable. 
+Also, the program itself becomes more readable. 
 
 ```java
  CompletableFuture.supplyAsync(() -> getStockInfo(“GOOGL”), executor)   // if executor is not passed it uses internal pool
@@ -170,7 +170,7 @@ Also, the program itself becomes more fluent and readable.
         .thenRun(() -> System.out.println(“done”)));
 ```
 
-So when you trigger this, then it immediately returns the CompletableFuture, and then you can check its methods below to check status and such if needed. 
+So when you trigger this, it immediately returns the CompletableFuture, and you can check its methods below to check status and such. 
 
 **Massive API**
 
