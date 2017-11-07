@@ -4,8 +4,7 @@
 * [Examples:](#examples-)
 * [Comparators](#comparators)
 * [Concurrency](#concurrency)
-* [CompletionStage](#completionstage)
-* [CompletableFuture (= Future + CompletionStage)](#completablefuture----future---completionstage-)
+* [CompletableFuture](#completablefuture)
 * [StampedLock](#stampedlock)
 * [@Contended](#-contended)
 
@@ -146,19 +145,9 @@ Operations
 - sum  // retrieves result by coordinating between threads
 - reset
 
+### CompletableFuture
 
-### CompletionStage
-
-```java
-stage.thenApply(x -> square(x))
-        .thenAccept(x -> System.out.println(x))
-        .thenRun(() -> System.out.println(“done”));
-```
-Each of the above calls have async variant
-
-### CompletableFuture (= Future + CompletionStage)
-
-Basically provide a call back to the future itself, so that as soon the result is available it can react to it by triggering those callbacks. In ```future``` the method ```get``` is blocking (waits indefinitely for the result). In completableFuture the current thread is not blocked. 
+Similar to JavaScript promises. Multiple async tasks can be chained (performed one after another on separate thread). Better alternative to ```future``` where the method ```get``` is blocking (waits indefinitely for the result). In completableFuture the current thread is not blocked. Each task is executed once previous task is completed. 
 
 Also, the program itself becomes more readable. 
 
@@ -170,7 +159,7 @@ Also, the program itself becomes more readable.
         .thenRun(() -> System.out.println(“done”)));
 ```
 
-So when you trigger this, it immediately returns the CompletableFuture, and you can check its methods below to check status and such. 
+So when you trigger this, it immediately returns the CompletableFuture instance, which can be used to check its status and such.
 
 **Massive API**
 
@@ -180,35 +169,9 @@ So when you trigger this, it immediately returns the CompletableFuture, and you 
 - cancel()
 - isDone()
 
-**Producer of the CompletableFuture**
-
-So you return a new CompletableFuture immediately, and keep its reference so that while processing and after processing you can trigger the right methods on it (complete)
-
-```java
-CompletionStage<String> getWebpage(URL url){
-
-    CompletableFuture<String> future = new CompletableFuture<>();
-    
-    Runnable task = new Runnable(){
-        public void run(){
-            try {
-                String webpage = blockingReadWebpage(url); // produce result
-                future.complete(webpage);  // set result
-            } catch(Exception e){
-                future.completeExceptionally(e); //set exception
-            }                 
-        }
-    }
-    
-    pool.execute(task);
-    return future;
-}
-```
-
-
 ### StampedLock 
-
 - Better alternative for ReadWriteLock
+
 - It does optimistic reads so works faster only on less contended operations
 - Not re-entrant
 
