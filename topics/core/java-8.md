@@ -154,20 +154,18 @@ Also, the program itself becomes more readable.
 ```java
  CompletableFuture.supplyAsync(() -> getStockInfo(“GOOGL”), executor)   // if executor is not passed it uses internal pool
         .whenComplete((info, exec) -> System.out.println(info))  // triggered once previous operation is finished
-        .thenApply(Stock::getRate)   // thenApply takes input and returns output
-        .thenAccept(rate -> System.out.println(rate))  // thenAccept takes input, does not return output
-        .thenRun(() -> System.out.println(“done”)));   // thenRun only runs
+        .thenApply(Stock::getRate)   
+        .thenAccept(rate -> System.out.println(rate))  
+        .thenRun(() -> System.out.println(“done”)));  
 ```
 
 So when you trigger this, it immediately returns the CompletableFuture instance, which can be used to check its status and such.
 
-**Massive API**
-
-- get()
-- join()  
-- getNow(T valIfAbsent)
-- cancel()
-- isDone()
+- supply method takes ```Supplier``` which returns a value
+- thenApply method argument is ```Function``` which takes input and returns value
+- thenAccept method argument is ```Consumer``` which takes input
+- thenRun method argument is ```Runnable``` which only runs 
+- CompletableFuture has no control of tasks while they are running in the executor. So cancel method just sets returned value as Exceptional.
 
 ### StampedLock 
 
