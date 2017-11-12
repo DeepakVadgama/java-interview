@@ -153,10 +153,10 @@ Also, the program itself becomes more readable.
 
 ```java
  CompletableFuture.supplyAsync(() -> getStockInfo(“GOOGL”), executor)   // if executor is not passed it uses internal pool
-        .whenComplete((info, exec) -> System.out.println(info))
-        .thenApply(Stock::getRate)
-        .thenAccept(rate -> System.out.println(rate))
-        .thenRun(() -> System.out.println(“done”)));
+        .whenComplete((info, exec) -> System.out.println(info))  // triggered once previous operation is finished
+        .thenApply(Stock::getRate)   // thenApply takes input and returns output
+        .thenAccept(rate -> System.out.println(rate))  // thenAccept takes input, does not return output
+        .thenRun(() -> System.out.println(“done”)));   // thenRun only runs
 ```
 
 So when you trigger this, it immediately returns the CompletableFuture instance, which can be used to check its status and such.
@@ -170,8 +170,8 @@ So when you trigger this, it immediately returns the CompletableFuture instance,
 - isDone()
 
 ### StampedLock 
-- Better alternative for ReadWriteLock
 
+- Better alternative for ReadWriteLock
 - It does optimistic reads so works faster only on less contended operations
 - Not re-entrant
 
