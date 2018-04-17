@@ -75,3 +75,10 @@ SELECT Salary FROM
 (  SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 10 ) 
 AS Emp ORDER BY Salary LIMIT 1;
 ```
+
+
+-print 2nd highest salary in employee
+```sql
+SELECT MAX(Salary) FROM Employee
+WHERE Salary < (SELECT MAX(Salary) from Employee);
+```
