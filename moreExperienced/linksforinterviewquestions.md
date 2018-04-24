@@ -4,6 +4,8 @@ https://career.guru99.com/top-16-eclipse-interview-questions/
 #### Core java:
 
 #### spring :
+http://www.baeldung.com/spring-interview-questions
+https://intellipaat.com/interview-question/spring-interview-questions/
 
 #### j2ee:
 https://career.guru99.com/top-50-j2ee-interview-questions/
