@@ -2,6 +2,9 @@
 https://career.guru99.com/top-16-eclipse-interview-questions/
 
 #### Core java:
+https://career.guru99.com/top-100-core-java-interview-questions/
+https://www.javatpoint.com/corejava-interview-questions-3
+https://www.journaldev.com/2366/core-java-interview-questions-and-answers
 
 #### spring :
 http://www.baeldung.com/spring-interview-questions
@@ -21,7 +24,12 @@ https://intellipaat.com/interview-question/amazon-aws-interview-questions/
 https://mindmajix.com/aws-interview-questions
 
 #### docker:
+https://www.edureka.co/blog/interview-questions/docker-interview-questions/?SSAID=745788
+https://career.guru99.com/top-11-devops-interview-questions/
 
 #### jenkins:
+https://github.com/hegdedarsh/jenkins-questions/blob/master/jenkins-james-lee
+
 
 #### nginx:
+https://career.guru99.com/top-18-nginx-interview-question/
