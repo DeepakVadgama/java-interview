@@ -22,6 +22,8 @@ http://www.softwaretestinghelp.com/j2ee-interview-questions-answers/
 https://career.guru99.com/top-15-aws-interview-questions/
 https://intellipaat.com/interview-question/amazon-aws-interview-questions/
 https://mindmajix.com/aws-interview-questions
+https://svrtechnologies.com/aws-interview-questions/top-50-aws-interview-questions-and-answers-pdf
+https://www.iheavy.com/2011/08/05/ec2-interview-aws-interview-cloud-interview-8-questions/
 
 #### docker:
 https://www.edureka.co/blog/interview-questions/docker-interview-questions/?SSAID=745788
