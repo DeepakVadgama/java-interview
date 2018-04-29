@@ -2,10 +2,11 @@
 https://career.guru99.com/top-16-eclipse-interview-questions/
 
 #### Core java:
-https://career.guru99.com/top-100-core-java-interview-questions/
-https://www.javatpoint.com/corejava-interview-questions-3
-https://www.journaldev.com/2366/core-java-interview-questions-and-answers
-
+- https://career.guru99.com/top-100-core-java-interview-questions/
+- https://www.javatpoint.com/corejava-interview-questions-3
+- https://www.journaldev.com/2366/core-java-interview-questions-and-answers
+- https://www.linkedin.com/pulse/advantages-disadvantages-microservices-siva-kumar/
+- 
 #### spring :
 http://www.baeldung.com/spring-interview-questions
 https://intellipaat.com/interview-question/spring-interview-questions/
@@ -35,3 +36,6 @@ https://github.com/hegdedarsh/jenkins-questions/blob/master/jenkins-james-lee
 
 #### nginx:
 https://career.guru99.com/top-18-nginx-interview-question/
+
+#### microservices:
+- https://www.linkedin.com/pulse/advantages-disadvantages-microservices-siva-kumar/
