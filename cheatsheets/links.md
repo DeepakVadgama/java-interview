@@ -17,4 +17,6 @@
 - https://gist.github.com/jahe/ff2bc3550563672bb2f68774cdd1c2ee#file-kafka-notes-txt
 -  spring boot https://gist.github.com/jahe/0bdb68fc7ffecc196530
 - https://github.com/cooervo/jpa-cheatsheet
+- https://www.cheatography.com/ovi-mihai/cheat-sheets/mongodb/
+- https://gist.github.com/aponxi/4380516
 - 
