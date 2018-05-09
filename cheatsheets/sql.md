@@ -1,0 +1,3 @@
+- http://www.bullraider.com/database/sql-tutorial/7-complex-queries-in-sql
+- https://www.quora.com/What-are-the-frequently-asked-basic-and-complex-queries-SQL-during-a-tech-interview
+- 
